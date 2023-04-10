@@ -16,7 +16,7 @@ output "subnet" {
     value = {
         project = data.google_compute_subnetwork.subnet.project
         region  = data.google_compute_subnetwork.subnet.region
-        network_name = "default"
+        network_name = data.google_compute_subnetwork.subnet.network
         self_link = data.google_compute_subnetwork.subnet.self_link
     }
 }

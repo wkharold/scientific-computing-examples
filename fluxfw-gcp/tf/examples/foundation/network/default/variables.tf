@@ -12,6 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+variable "network_name" {
+    description = "Name of the network to use"
+    type        = string
+    default     = "default"
+}
+
 variable "project_id" {
     description = "The GCP project ID"
     type        = string
@@ -23,7 +29,7 @@ variable "region" {
 }
 
 variable "subnet_name" {
-    description = "Name of the subnetwork to deploy"
+    description = "Name of the subnetwork to use"
     type        = string
     default     = "default"
 }
