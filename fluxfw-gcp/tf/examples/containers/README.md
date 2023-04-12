@@ -81,7 +81,7 @@ echo $USER
 To request an allocation of nodes for your Jupyter Lab server use the command:
 
 ```bash
-flux mini alloc -N4 --requires=n2
+flux alloc -N4 --requires=n2
 ```
 
 Flux will allocate four nodes and give you a new shell on one of them.
@@ -236,7 +236,7 @@ spack containerize > gromacs.def
 Use the generated definition file to build an Apptainer container with the command:
 
 ```bash
-flux mini submit -N1 --requires=n2 apptainer build gromacs.sif gromacs.def
+flux submit -N1 --requires=n2 apptainer build gromacs.sif gromacs.def
 ```
 
 The command above creates a flux `job` that runs the Apptainer build command on one of the compute nodes in the cluster. Building
@@ -260,7 +260,7 @@ the GROMACS `gmx_mpi` command anywhere Apptainer is installed, e.g., any of the 
 command:
 
 ```bash
-flux mini run -N1 --requires=n2 ./gromacs.sif -h
+flux run -N1 --requires=n2 ./gromacs.sif -h
 ```
 
 will result in output similar to:

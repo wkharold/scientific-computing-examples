@@ -26,6 +26,8 @@ steps:
   args:
   - build
   - -var
+  - enable_secure_boot=${_ENABLE_SECURE_BOOT}
+  - -var
   - project_id=$PROJECT_ID
   - -var
   - machine_architecture=${_MACHINE_ARCHITECTURE}
@@ -41,6 +43,7 @@ steps:
   - subnetwork=${_SUBNETWORK}
   - compute.pkr.hcl
 substitutions:
+  _ENABLE_SECURE_BOOT: "true"
   _SOURCE_IMAGE: rocky-linux-8-optimized-gcp-v20220719
   _SOURCE_IMAGE_PROJECT_ID: rocky-linux-cloud 
   _SUBNETWORK: default

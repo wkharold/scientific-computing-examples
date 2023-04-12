@@ -1,4 +1,4 @@
-# Flux Framework GPU Example - Cluster Deployment
+Flux Framework GPU Example - Cluster Deployment
 
 This deployment uses the [Flux Framework Cluster Module]() to bring together the remote state from the foundation deployment
 with the Flux Framework images built with Cloud Build to instantiate a cluster of Compute Engine instances
@@ -82,7 +82,7 @@ When the compute node is ready you will see output that looks like:
 Once the compute node is ready you can allocate it with the command:
 
 ```bash
-flux mini alloc -N1 -c4 -g1
+flux alloc -N1 -c4 -g1
 ```
 
 Flux will allocate the node and give you a new shell on it. Now you can start working with the GPU attached to it. 

@@ -74,11 +74,11 @@ flux resource list -o "{state:>10} {properties:<25.25} {nnodes:>6} {ncores:>8} {
 
 ## MPI Execution
 
-Running MPI codes on the flux-framework is simple. You use either the the `flux mini` *run* or *submit*
+Running MPI codes on the flux-framework is simple. You use either the the `flux` *run* or *submit*
 commands to run a job consisting of N copies of an MPI program launched together as a parallel job.
 
 ```bash
-flux mini run -n N <mpi-code>
+flux run -n N <mpi-code>
 ```
 
 The flux runtime handles all the underlying details of correctly setting up the environment and running
@@ -99,21 +99,21 @@ ways to tune the environment for optimal performance that are beyond the scope o
 To run the latency benchmark interactively on Intel chips, use the command:
 
 ```bash
-flux mini run -N2 --requires=Intel /usr/lib64/mpich/bin/mpitests-osu_get_latency
+flux run -N2 --requires=Intel /usr/lib64/mpich/bin/mpitests-osu_get_latency
 ```
 
 for AMD chips, use the command:
 
 ```bash
-flux mini run -N2 --requires=AMD /usr/lib64/mpich/bin/mpitests-osu_get_latency
+flux run -N2 --requires=AMD /usr/lib64/mpich/bin/mpitests-osu_get_latency
 ```
 
 In each case you will have to wait for the command to complete. If you want to submit the benchmarks as
 flux-framework jobs, use the commands:
 
 ```bash
-flux mini submit -N2 --requires=Intel --output=intel.out /usr/lib64/mpich/bin/mpitests-osu_get_latency
-flux mini submit -N2 --requires=AMD --output=amd.out /usr/lib64/mpich/bin/mpitests-osu_get_latency
+flux submit -N2 --requires=Intel --output=intel.out /usr/lib64/mpich/bin/mpitests-osu_get_latency
+flux submit -N2 --requires=AMD --output=amd.out /usr/lib64/mpich/bin/mpitests-osu_get_latency
 ```
 
 In each case when the command or job finishes the output will resemble:
@@ -162,21 +162,21 @@ ways to tune the environment for optimal performance that are beyond the scope o
 To run the bandwidth benchmark interactively on Intel chips, use the command:
 
 ```bash
-flux mini run -N2 --requires=Intel /usr/lib64/mpich/bin/mpitests-osu_get_bw
+flux run -N2 --requires=Intel /usr/lib64/mpich/bin/mpitests-osu_get_bw
 ```
 
 for AMD chips, use the command:
 
 ```bash
-flux mini run -N2 --requires=AMD /usr/lib64/mpich/bin/mpitests-osu_get_bw
+flux run -N2 --requires=AMD /usr/lib64/mpich/bin/mpitests-osu_get_bw
 ```
 
 In each case you will have to wait for the command to complete. If you want to submit the benchmarks as
 flux-framework jobs, use the commands:
 
 ```bash
-flux mini submit -N2 --requires=Intel --output=intel.out /usr/lib64/mpich/bin/mpitests-osu_get_bw
-flux mini submit -N2 --requires=AMD --output=amd.out /usr/lib64/mpich/bin/mpitests-osu_get_bw
+flux submit -N2 --requires=Intel --output=intel.out /usr/lib64/mpich/bin/mpitests-osu_get_bw
+flux submit -N2 --requires=AMD --output=amd.out /usr/lib64/mpich/bin/mpitests-osu_get_bw
 ```
 
 In each case when the command or job finishes the output will resemble:

@@ -59,7 +59,7 @@ When the cluster is ready you will see output that looks like:
 Now you can create an allocation for your work using the command:
 
 ```bash
-flux mini alloc -N4 --requires=arm64
+flux alloc -N4 --requires=arm64
 ```
 
 Flux will allocate four nodes and give you a new shell on one of them.
